@@ -2,11 +2,34 @@
   font-family: "Raleway", sans-serif;
 }
 
+:root {
+  --main-color: #09c;
+}
+
 .page {
   min-height: 100vh;
+  background: var(--main-color);
+  transition: background-color 0.5s ease-in-out;
 }
 
 .card-text {
   max-width: 450px;
   height: auto;
+}
+
+.card {
+  --bs-card-border-width: 0;
+  color: var(--main-color);
+}
+
+#new-quote {
+  background-color: var(--main-color);
+}
+
+.fa-twitter {
+  stroke: var(--main-color);
+}
+
+.btn {
+  --bs-btn-border-width: 0;
 }

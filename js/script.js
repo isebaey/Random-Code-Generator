@@ -25,42 +25,31 @@ let others = [
 ];
 
 let qouteBtn = document.getElementById("new-quote");
-qouteBtn.addEventListener("click", getRndQuote);
+qouteBtn.addEventListener("click", handleButtonClick);
+
+lastQuoteIndex = -1;
+
+function handleButtonClick() {
+  getRndQuote();
+  changeColor();
+}
 
 function getRndQuote() {
-  var finalNumber = Math.floor(Math.random() * 10) + 1;
-  if (finalNumber === 1) {
-    document.getElementById("quote").innerHTML = quotes[0];
-    document.getElementById("other").innerHTML = others[0];
-  } else if (finalNumber === 2) {
-    document.getElementById("quote").innerHTML = quotes[1];
-    document.getElementById("other").innerHTML = others[1];
-  } else if (finalNumber === 3) {
-    document.getElementById("quote").innerHTML = quotes[2];
-    document.getElementById("other").innerHTML = others[2];
-  } else if (finalNumber === 4) {
-    document.getElementById("quote").innerHTML = quotes[3];
-    document.getElementById("other").innerHTML = others[3];
-  } else if (finalNumber === 5) {
-    document.getElementById("quote").innerHTML = quotes[4];
-    document.getElementById("other").innerHTML = others[4];
-  } else if (finalNumber === 6) {
-    document.getElementById("quote").innerHTML = quotes[5];
-    document.getElementById("other").innerHTML = others[5];
-  } else if (finalNumber === 7) {
-    document.getElementById("quote").innerHTML = quotes[6];
-    document.getElementById("other").innerHTML = others[6];
-  } else if (finalNumber === 8) {
-    document.getElementById("quote").innerHTML = quotes[7];
-    document.getElementById("other").innerHTML = others[7];
-  } else if (finalNumber === 9) {
-    document.getElementById("quote").innerHTML = quotes[8];
-    document.getElementById("other").innerHTML = others[8];
-  } else if (finalNumber === 10) {
-    document.getElementById("quote").innerHTML = quotes[9];
-    document.getElementById("other").innerHTML = others[9];
-  } else {
-    document.getElementById("quote").innerHTML = "error loading data";
-    document.getElementById("other").innerHTML = "error loading data";
-  }
+  var qouteNumber;
+  do {
+    qouteNumber = Math.floor(Math.random() * 10);
+  } while (qouteNumber === lastQuoteIndex);
+
+  lastQuoteIndex = qouteNumber;
+
+  document.getElementById("quote").innerHTML = quotes[qouteNumber];
+  document.getElementById("other").innerHTML = others[qouteNumber];
+}
+
+function changeColor() {
+  // Generate a random color (you can replace this logic with your own color generation)
+  let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+  // Update the --main-color CSS variable with the new color
+  document.documentElement.style.setProperty("--main-color", randomColor);
 }

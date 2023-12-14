@@ -33,3 +33,19 @@
 .btn {
   --bs-btn-border-width: 0;
 }
+
+.card #other-image-container {
+  content: "";
+  top: -50px;
+  left: 10px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  background: var(--main-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#other-image-container img {
+  opacity: 0.8;
+}

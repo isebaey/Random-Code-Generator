@@ -6,7 +6,7 @@ let quotes = [
   `“The greatest glory in living lies not in never falling, but in rising every time we fall.”`,
   `“Life is what happens when you're busy making other plans.”`,
   `“Get busy living or get busy dying.”`,
-  `“The future belongs to those who believe in the beauty of their dreams.”`,
+  `““The greatest (struggle/striving) is to battle your own soul, to fight the evil within yourself.”`,
   `“It is our choices, Harry, that show what we truly are, far more than our abilities.”`,
   `“In three words I can sum up everything I've learned about life: it goes on.”`,
 ];
@@ -19,7 +19,7 @@ let others = [
   `― Nelson Mandela`,
   `― John Lennon`,
   `― Stephen King`,
-  `― Eleanor Roosevelt`,
+  `― Prophet Muhammad`,
   `― J.K. Rowling`,
   `― Robert Frost`,
 ];
@@ -32,10 +32,11 @@ lastQuoteIndex = -1;
 function handleButtonClick() {
   getRndQuote();
   changeColor();
+  changOtherImage();
 }
 
+var qouteNumber;
 function getRndQuote() {
-  var qouteNumber;
   do {
     qouteNumber = Math.floor(Math.random() * 10);
   } while (qouteNumber === lastQuoteIndex);
@@ -52,4 +53,9 @@ function changeColor() {
 
   // Update the --main-color CSS variable with the new color
   document.documentElement.style.setProperty("--main-color", randomColor);
+}
+
+function changOtherImage() {
+  var imagePath = `image/${qouteNumber}.jpg`;
+  document.getElementById("other-image").setAttribute("src", imagePath);
 }

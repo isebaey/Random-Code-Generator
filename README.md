@@ -15,6 +15,7 @@ Welcome to the Random Code Generator project! This web application generates ran
 ## Demo
 
 https://raw.githack.com/isebaey/Random-Code-Generator/main/index.html
+https://isebaey.github.io/Random-Code-Generator/
 
 ## Features
 
